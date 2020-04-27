@@ -19,8 +19,8 @@ pipeline {
             steps {
                  sh '''#!/bin/bash
                 echo "Step: Deploy HelloSingam.bat"
-		mkdir /opt/helloworld
-		./hellosingam.bat > /opt/helloworld/hellosingam.txt
+		mkdir helloworld
+		./hellosingam.bat > helloworld/hellosingam.txt
                 '''
             }
         }

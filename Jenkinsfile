@@ -22,10 +22,10 @@ pipeline {
 		mkdir helloworld
 		git clone https://github.com/singam4cloud/helloworld.git
 		git checkout cisco-cr1
+		chmod 755 hellosingam.bat
 		./hellosingam.bat > helloworld/hellosingam.txt
-		cat >> helloworld/hellosingam.txt << "EOF"
+		cat >> helloworld/hellosingam.txt
 		************* Successfully executed *************
-		EOF
                 '''
             }
         }

@@ -15,12 +15,13 @@ pipeline {
                 '''
             }
         }
-        stage('--execute--') {
+        stage('--deploy--') {
             steps {
                  sh '''#!/bin/bash
-                echo "Step: Execute Hello Singam"
+                echo "Step: Deploy HelloSingam.bat"
+		mkdir /opt/helloworld
+		./hellosingam.bat > /opt/helloworld/hellosingam.txt
                 '''
-		sh 'hellosingam.bat'
             }
         }
 	stage('--package--') {

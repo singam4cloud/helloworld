@@ -20,7 +20,12 @@ pipeline {
                  sh '''#!/bin/bash
                 echo "Step: Deploy HelloSingam.bat"
 		mkdir helloworld
+		git clone https://github.com/singam4cloud/helloworld.git
+		git checkout cisco-cr1
 		./hellosingam.bat > helloworld/hellosingam.txt
+		cat >> helloworld/hellosingam.txt << "EOF"
+		************* Successfully executed *************
+		EOF
                 '''
             }
         }

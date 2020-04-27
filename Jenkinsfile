@@ -3,17 +3,31 @@ pipeline {
     stages {
         stage('---clean---') {
             steps {
-                sh "mvn clean"
+                sh '''#!/bin/bash
+                echo "Step: Clean"
+                '''
             }
         }
         stage('--test--') {
             steps {
-                sh "mvn test"
+                 sh '''#!/bin/bash
+                echo "Step: Test"
+                '''
             }
         }
-        stage('--package--') {
+        stage('--execute--') {
             steps {
-                sh "mvn package"
+                 sh '''#!/bin/bash
+                echo "Step: Execute Hello Singam"
+                '''
+		sh 'hellosingam.bat'
+            }
+        }
+	stage('--package--') {
+            steps {
+                sh '''#!/bin/bash
+                echo "Step: Package"
+                '''
             }
         }
     }
